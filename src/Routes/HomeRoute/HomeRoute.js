@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Token from '../../Services/token-service'
+import config from '../../config'
 
 export default class HomeRoute extends Component {
   render() {
