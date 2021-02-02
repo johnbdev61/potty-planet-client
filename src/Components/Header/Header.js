@@ -20,6 +20,12 @@ export default class Header extends Component {
           </span>
         </div>
         <nav>
+          <Link to='/messages'>
+            <b>Messages</b>
+          </Link>
+          <Link to='archive'>
+            <b>Archive</b>
+          </Link>
           <Link className='user' onClick={this.handleLogoutClick} to='/login'>
             <b>Logout</b>
           </Link>
