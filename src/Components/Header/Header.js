@@ -16,7 +16,7 @@ export default class Header extends Component {
         <div className='header-name'>
           <span>
             <b>Logged in as </b>
-            {this.context.user.username}
+            {this.context.user.sub}
           </span>
         </div>
         <nav>

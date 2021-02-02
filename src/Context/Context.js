@@ -21,7 +21,7 @@ export class ContextProvider extends Component {
     if (jwtPayload)
       state.user = {
         id: jwtPayload.user_id,
-        username: jwtPayload.username,
+        sub: jwtPayload.sub,
       }
     this.state = state
   }
@@ -33,15 +33,16 @@ export class ContextProvider extends Component {
     this.setState({ error: null })
   }
   setUser = user => {
-    this.setState({ user})
+    this.setState({ user })
   }
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
     this.setUser({
       id: jwtPayload.user_id,
-      username: jwtPayload.username,
+      username: jwtPayload.sub,
     })
+    console.log('PAYLOAD', jwtPayload)
   }
   processLogout = () => {
     TokenService.clearAuthToken()
@@ -58,6 +59,7 @@ export class ContextProvider extends Component {
       processLogin: this.processLogin,
       processLogout: this.processLogout,
     }
+    console.log(value)
     return (
       <Context.Provider value={value}>
         {this.props.children}
