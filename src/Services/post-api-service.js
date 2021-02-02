@@ -27,7 +27,7 @@ const PostApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
-  postComment(postId, text) {
+  postComment(postId, comment) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {

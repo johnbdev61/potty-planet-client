@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import Header from '../Header/Header'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
@@ -19,7 +20,7 @@ export default class App extends Component {
     const { hasError } = this.state
     return (
       <div className='App'>
-        <h1>Potty Planet</h1>
+        <Header />
         <main>
           {hasError && (
             <p>There was an error! Sorry!</p>

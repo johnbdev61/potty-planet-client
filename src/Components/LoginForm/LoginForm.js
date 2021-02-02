@@ -24,7 +24,7 @@ export default class LoginForm extends Component {
       username.value = ''
       password.value = ''
       console.log('AUTH')
-        this.context.handleLogin(res.authToken)
+        this.context.processLogin(res.authToken)
         this.props.onLoginSuccess()
     })
     .catch(res => {
