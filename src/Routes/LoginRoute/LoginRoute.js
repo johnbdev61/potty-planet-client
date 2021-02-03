@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
+// import Context from'../../Context/Context
 
 export default class LoginRoute extends Component {
   static defaultProps = {
@@ -10,6 +11,7 @@ export default class LoginRoute extends Component {
   }
   handleLoginSuccess = () => {
     const { location, history } = this.props
+    console.log('IN HANDLE SUBMIT', this.props)
     const destination = (location.state || {}).from || '/'
     history.push(destination)
   }

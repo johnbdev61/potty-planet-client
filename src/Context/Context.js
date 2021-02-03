@@ -25,6 +25,9 @@ export class ContextProvider extends Component {
       }
     this.state = state
   }
+
+  
+
   setError = error => {
     console.error(error)
     this.setState({ error })
