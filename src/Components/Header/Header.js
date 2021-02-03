@@ -20,6 +20,9 @@ export default class Header extends Component {
           </span>
         </div>
         <nav>
+          <Link to='/post'>
+            <b>New Post</b>
+          </Link>
           <Link to='/messages'>
             <b>Messages</b>
           </Link>

@@ -1,29 +1,41 @@
 import React, { Component } from 'react'
 import Token from '../../Services/token-service'
 import config from '../../config'
+import PostListContext from '../../Context/PostListContext'
+import PostApiService from '../../Services/post-api-service'
+import PostListItem from '../../Components/PostListItem/PostListItem'
 
 export default class HomeRoute extends Component {
-  //static contextType = PostListContext
+  static contextType = PostListContext
 
-  //componentDidMount() {
-  //   clear error
-  //   get posts
-  //   set in context
-  //   catch context error
-  // }
+  componentDidMount() {
+    this.context.clearError()
+    PostApiService.getPosts()
+      .then(this.context.setPostList)
+      .then(this.context.setError)
+  }
 
-  // renderPosts() {
-  //   define post list
-  //   return list and map
-  //   to PostListItem
-  //   key=postID
-  //   post={post}
-  // }
+  renderPosts() {
+    const { postList = [] } = this.context
+    return postList.map(post =>
+      <PostListItem
+        key={post.id}
+        post={post}
+      />
+    )
+  }
 
   render() {
+    const { error } = this.context
     return (
       <div>
         <h2>Home Page</h2>
+        <section>
+          {error
+            ? <p>There was an error, try again</p>
+            : this.renderPosts()
+          }
+        </section>
       </div>
     )
   }

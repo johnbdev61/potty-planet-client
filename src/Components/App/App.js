@@ -6,6 +6,7 @@ import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
 import LoginRoute from '../../Routes/LoginRoute/LoginRoute'
 import HomeRoute from '../../Routes/HomeRoute/HomeRoute'
+import NewPostRoute from '../../Routes/NewPostRoute/NewPostRoute'
 import ArchiveRoute from '../../Routes/ArchiveRoute/ArchiveRoute'
 import MessagesRoute from '../../Routes/MessagesRoute/MessagesRoute'
 import NotFoundRoute from '../../Routes/NotFoundRoute/NotFoundRoute'
@@ -27,8 +28,9 @@ export default class App extends Component {
           {hasError && <p>There was an error! Sorry!</p>}
           <Switch>
             <PrivateRoute exact path={'/'} component={HomeRoute} />
-            <PrivateRoute exact path={'/archive'} component={ArchiveRoute} />
-            <PrivateRoute exact path={'/messages'} component={MessagesRoute} />
+            <PrivateRoute path={'/post'} component={NewPostRoute} />
+            <PrivateRoute path={'/archive'} component={ArchiveRoute} />
+            <PrivateRoute path={'/messages'} component={MessagesRoute} />
             <PublicOnlyRoute path={'/register'} component={RegisterRoute} />
             <PublicOnlyRoute path={'/login'} component={LoginRoute} />
             <Route component={NotFoundRoute} />
