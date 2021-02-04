@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Textarea } from '../../Components/Form'
-import { Button } from '../../Components/Button/Button'
+import { Textarea } from '../../Components/Form/Form'
+import Button from '../../Components/Button/Button'
 import PostContext from '../../Context/PostContext'
 
 export default class CommentForm extends Component {
@@ -19,9 +19,11 @@ export default class CommentForm extends Component {
           >
           </Textarea>
         </div>
-        <Button type ='submit'>
-          Post Comment
-        </Button>
+        <div className='btn'>
+          <Button type ='submit'>
+            Post Comment
+          </Button>
+        </div>
       </form>
     )
   }

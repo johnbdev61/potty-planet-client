@@ -7,7 +7,7 @@ export default class PostListItem extends Component {
     return (
       <div>
         <h3>
-          <Link to='post.id.route'>
+          <Link to={`/open-post/${post.id}`}>
             {post.title}
           </Link>
         </h3>

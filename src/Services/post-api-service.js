@@ -12,7 +12,8 @@ const PostApiService = {
   getPost(postId) {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -23,7 +24,7 @@ const PostApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(object),
     }).then((res) =>
@@ -33,7 +34,7 @@ const PostApiService = {
   getPostComments(postId) {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}/comments`, {
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -44,7 +45,7 @@ const PostApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         post_id: postId,

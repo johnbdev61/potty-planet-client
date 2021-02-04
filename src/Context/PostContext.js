@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 
-export const nullPost = {
-  author: {},
-  tags: [],
-}
-
 const PostContext = React.createContext({
-  post: nullPost,
+  post: {},
   posts: [],
   comments: [],
   error: null,
@@ -23,7 +18,7 @@ export default PostContext
 
 export class PostProvider extends Component {
   state = {
-    Post: nullPost,
+    post: {},
     error: null,
   }
 
@@ -45,7 +40,7 @@ export class PostProvider extends Component {
   }
 
   clearPost = () => {
-    this.setPost(nullPost)
+    this.setPost({})
     this.setComments([])
   }
 
