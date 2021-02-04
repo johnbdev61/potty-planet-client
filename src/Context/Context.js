@@ -62,7 +62,6 @@ export class ContextProvider extends Component {
       processLogin: this.processLogin,
       processLogout: this.processLogout,
     }
-    console.log(value)
     return (
       <Context.Provider value={value}>
         {this.props.children}

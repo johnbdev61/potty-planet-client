@@ -17,6 +17,7 @@ export default class HomeRoute extends Component {
 
   renderPosts() {
     const { postList = [] } = this.context
+    console.log('POST LIST', this.context.postList)
     return postList.map(post =>
       <PostListItem
         key={post.id}

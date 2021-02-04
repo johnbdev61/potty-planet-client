@@ -41,7 +41,7 @@ export class PostProvider extends Component {
   }
 
   addPost = (post) => {
-    this.setComments([...this.state.posts, post])
+    this.setPost([...this.state.posts, post])
   }
 
   clearPost = () => {
@@ -72,9 +72,9 @@ export class PostProvider extends Component {
       addComment: this.addComment,
     }
     return (
-      <ArticleContext.Provider value={value}>
+      <PostContext.Provider value={value}>
         {this.props.children}
-      </ArticleContext.Provider>
+      </PostContext.Provider>
     )
   }
 }

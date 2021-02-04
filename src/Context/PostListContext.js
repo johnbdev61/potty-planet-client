@@ -7,6 +7,7 @@ const PostListContext = React.createContext({
   clearError: () => {},
   setPostList: () => {},
 })
+
 export default PostListContext
 
 export class PostListProvider extends Component {
@@ -36,6 +37,7 @@ export class PostListProvider extends Component {
       clearError: this.clearError,
       setPostList: this.setPostList,
     }
+    console.log(value)
     return (
       <PostListContext.Provider value={value}>
         {this.props.children}

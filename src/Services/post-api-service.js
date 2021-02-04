@@ -18,17 +18,14 @@ const PostApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
-  addPost(title, content) {
+  addPost(object) {
     return fetch(`${config.API_ENDPOINT}/posts`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        title: title,
-        content: content,
-      }),
+      body: JSON.stringify(object),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.recject(e)) : res.json()
     )
