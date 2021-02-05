@@ -32,7 +32,7 @@ export default class OpenPostRoute extends Component {
       <section>
         <h2>{post.title}</h2>
         <p>{post.content}</p>
-        <p>Author</p>
+        <p>{post.username}</p>
         <p>{post.date_created}</p>
         <CommentForm />
         <p>Comments</p>

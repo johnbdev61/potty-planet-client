@@ -19,6 +19,15 @@ const PostApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
+  getUsers() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    )
+  },
   addPost(object) {
     return fetch(`${config.API_ENDPOINT}/posts`, {
       method: 'POST',
