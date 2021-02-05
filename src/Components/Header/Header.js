@@ -16,7 +16,7 @@ export default class Header extends Component {
         <div className='header-name'>
           <span>
             <b>Logged in as </b>
-            {this.context.user.username}
+            {this.context.user.sub}
           </span>
         </div>
         <nav>
@@ -51,6 +51,7 @@ export default class Header extends Component {
   }
 
   render() {
+    console.log('USER', this.context.user)
     return (
       <header>
         <h1 className='header'>

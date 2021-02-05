@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PostContext from '../../Context/PostContext'
 import PostApiService from '../../Services/post-api-service'
 import CommentForm from '../../Components/CommentForm/CommentForm'
+import CommentItem from '../../Components/CommentItem/CommentItem'
 
 export default class OpenPostRoute extends Component {
   static defaultProps = {
@@ -14,11 +15,12 @@ export default class OpenPostRoute extends Component {
     const { postId } = this.props.match.params
     this.context.clearError()
     PostApiService.getPost(postId)
-      .then((post) => this.context.setPost(post))
-      .catch((error) => this.context.setError(error))
-    // PostApiService.getPostComments(postId)
-    //   .then(this.context.setComments)
-    //   .catch(this.context.setError)  
+      .then((post) => {
+        this.context.setPost(post)
+        return PostApiService.getPostComments(postId)
+      })
+      .then((comments) => {this.context.setComments(comments)})
+      .catch(this.context.setError)  
   }
 
   componentWillUnmount() {
@@ -26,7 +28,7 @@ export default class OpenPostRoute extends Component {
   }
 
   render() {
-    const { post } = this.context
+    const { post, comments = [] } = this.context
     console.log('CONTEXT', this.context)
     return (
       <section>
@@ -36,11 +38,12 @@ export default class OpenPostRoute extends Component {
         <p>{post.date_created}</p>
         <CommentForm />
         <p>Comments</p>
+        <ul>
+          {comments.map((comment) => (
+            <CommentItem comment={ comment } />
+          ))}
+        </ul>
       </section>
     )
   }
-}
-
-const PostComments = ({ comments = [] }) => {
-  //returns comments list
 }

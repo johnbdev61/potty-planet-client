@@ -16,7 +16,7 @@ export default Context
 export class ContextProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null}
+    const state = { user: TokenService.parseAuthToken() || {}, error: null}
     const jwtPayload = TokenService.parseAuthToken()
     if (jwtPayload)
       state.user = {
@@ -41,10 +41,7 @@ export class ContextProvider extends Component {
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
-    this.setUser({
-      id: jwtPayload.user_id,
-      username: jwtPayload.sub,
-    })
+    this.setUser(jwtPayload)
     console.log('PAYLOAD', jwtPayload)
   }
   processLogout = () => {
