@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+
+.open-post-card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.comment-form {
+  text-align: center;
+}
+
+.comment-title, .post-title {
+  font-family: 'Staatliches', cursive;
+}
+
+.comment-content, .post-content {
+  font-family: 'Montserrat', sans-serif;
+}

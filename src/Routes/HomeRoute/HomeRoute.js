@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Token from '../../Services/token-service'
 import config from '../../config'
-import PostListContext from '../../Context/PostListContext'
+import PostContext from '../../Context/PostListContext'
 import PostApiService from '../../Services/post-api-service'
 import PostListItem from '../../Components/PostListItem/PostListItem'
+import './HomeRoute.css'
 
 export default class HomeRoute extends Component {
-  static contextType = PostListContext
+  static contextType = PostContext
 
   componentDidMount() {
     this.context.clearError()
@@ -30,12 +31,9 @@ export default class HomeRoute extends Component {
     const { error } = this.context
     return (
       <div>
-        <h2>Home Page</h2>
+        <h2 className='post-title'>Training Posts</h2>
         <section>
-          {error
-            ? <p>There was an error, try again</p>
-            : this.renderPosts()
-          }
+          {error ? <p>There was an error, try again</p> : this.renderPosts()}
         </section>
       </div>
     )

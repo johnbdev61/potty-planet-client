@@ -37,7 +37,7 @@ const PostApiService = {
       },
       body: JSON.stringify(object),
     }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.recject(e)) : res.json()
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
   getPostComments(postId) {
@@ -64,6 +64,15 @@ const PostApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
+  deletePost(postId) {
+    console.log('post method')
+    return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+    })
+  }
 }
 
 export default PostApiService

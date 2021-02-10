@@ -24,6 +24,7 @@ export class ContextProvider extends Component {
         sub: jwtPayload.sub,
       }
     this.state = state
+    console.log('STATE', this.state)
   }
 
   
@@ -41,7 +42,10 @@ export class ContextProvider extends Component {
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
-    this.setUser(jwtPayload)
+    this.setUser({
+      id: jwtPayload.user_id,
+      sub: jwtPayload.sub,
+    })
     console.log('PAYLOAD', jwtPayload)
   }
   processLogout = () => {

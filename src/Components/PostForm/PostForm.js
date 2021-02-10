@@ -3,6 +3,7 @@ import { Input, Textarea, Label } from '../Form/Form'
 import PostsServices from '../../Services/post-api-service'
 import PostContext from '../../Context/PostContext'
 import Button from '../Button/Button'
+import './PostForm.css'
 
 export default class PostForm extends Component {
   static defaultProps = {
@@ -46,7 +47,7 @@ export default class PostForm extends Component {
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
+        <div className='center-form'>
           <div>
             <Label htmlFor='post-title'>
               Title

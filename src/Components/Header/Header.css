@@ -1,0 +1,28 @@
+.header {
+  margin: 0;
+  padding: 15px;
+  font-family: 'Staatliches', cursive;
+  text-align: center;
+  font-size: 40px;
+  background-color: indigo;
+}
+
+.title {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  font-family: 'Montserat', sans-serif;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.header-name {
+  font-family: 'Montserat', sans-serif;
+  padding: 10px;
+}
+
+nav {
+  text-align: center;
+}

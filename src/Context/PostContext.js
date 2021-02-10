@@ -3,12 +3,14 @@ import React, { Component } from 'react'
 const PostContext = React.createContext({
   post: {},
   posts: [],
+  postList: [],
   comments: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setPost: () => {},
   addPost: () => {},
+  setPostList: () => {},
   clearPost: () => {},
   setComments: () => {},
   addComment: () => {},
@@ -19,6 +21,7 @@ export default PostContext
 export class PostProvider extends Component {
   state = {
     post: {},
+    postList: [],
     error: null,
   }
 
@@ -44,6 +47,10 @@ export class PostProvider extends Component {
     this.setComments([])
   }
 
+  setPostList = (postList) => {
+    this.setState({ postList })
+  }
+
   setComments = (comments) => {
     this.setState({ comments })
   }
@@ -56,6 +63,7 @@ export class PostProvider extends Component {
     const value = {
       post: this.state.post,
       posts: this.state.posts,
+      postList: this.state.postList,
       comments: this.state.comments,
       error: this.state.error,
       setError: this.setError,
@@ -63,6 +71,7 @@ export class PostProvider extends Component {
       setPost: this.setPost,
       addPost: this.addPost,
       clearPost: this.clearPost,
+      setPostList: this.setPostList,
       setComments: this.setComments,
       addComment: this.addComment,
     }

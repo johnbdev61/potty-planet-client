@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PostForm from '../../Components/PostForm/PostForm'
+import './NewPostRoute.css'
 
 export default class NewPostRoute extends Component {
   static defaultProps = {
@@ -17,7 +18,7 @@ export default class NewPostRoute extends Component {
   render() {
     return (
       <div>
-        <h2>Create Post</h2>
+        <h2 className='create-post'>Create Post</h2>
         <PostForm
           onPostSuccess={this.handlePostSuccess}
         />

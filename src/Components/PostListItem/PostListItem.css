@@ -1,0 +1,19 @@
+.post-card {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.post-link {
+  font-family: 'Staatliches', cursive;
+  text-decoration: none;
+}
+
+.card-content {
+  font-family: 'Montserrat', sans-serif;
+}

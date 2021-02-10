@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../Services/token-service'
 import Context from '../../Context/Context'
+import './Header.css'
 
 export default class Header extends Component {
   static contextType = Context
@@ -20,16 +21,20 @@ export default class Header extends Component {
           </span>
         </div>
         <nav>
-          <Link to='/new-post'>
+          <Link className='nav-links' to='/new-post'>
             <b>New Post</b>
           </Link>
-          <Link to='/messages'>
+          <Link className='nav-links' to='/messages'>
             <b>Messages</b>
           </Link>
-          <Link to='archive'>
-            <b>Archive</b>
+          <Link className='nav-links' to='archive'>
+            <b>Success Stories</b>
           </Link>
-          <Link className='user' onClick={this.handleLogoutClick} to='/login'>
+          <Link
+            className='nav-links'
+            onClick={this.handleLogoutClick}
+            to='/login'
+          >
             <b>Logout</b>
           </Link>
         </nav>
@@ -40,10 +45,11 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <nav>
-        <Link className='user' to='/login'>
+        <Link className='nav-links' to='/login'>
           <b>Login</b>
-        </Link>{' '}
-        <Link className='user' to='/register'>
+        </Link>
+        {' - '}
+        <Link className='nav-links' to='/register'>
           <b>Register</b>
         </Link>
       </nav>

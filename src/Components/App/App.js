@@ -22,13 +22,14 @@ export default class App extends Component {
 
   render() {
     const { hasError } = this.state
+    
     return (
       <div className='App'>
         <Header />
         <main>
           {hasError && <p>There was an error! Sorry!</p>}
           <Switch>
-            <PrivateRoute exact path={'/'} component={HomeRoute} />
+            <Route exact path={'/'} component={HomeRoute} />
             <PrivateRoute path={'/new-post'} component={NewPostRoute} />
             <PrivateRoute path={'/open-post/:postId'} component={OpenPostRoute} />
             <PrivateRoute path={'/archive'} component={ArchiveRoute} />
