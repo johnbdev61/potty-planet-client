@@ -1,0 +1,15 @@
+.center-login {
+  text-align: center;
+}
+
+.login-label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.username-input {
+  margin-bottom: 8px;
+}
+
+.login-btn {
+  padding-top: 8px;
+}

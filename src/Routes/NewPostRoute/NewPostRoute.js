@@ -11,7 +11,7 @@ export default class NewPostRoute extends Component {
   }
   handlePostSuccess = () => {
     const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
+    const destination = (location.state || {}).from || '/home'
     history.push(destination)
   }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RegisterForm from '../../Components/RegisterForm/RegisterForm'
+import './RegisterRoute.css'
 
 export default class RegisterRoute extends Component {
   static defaultProps = {
@@ -15,7 +16,7 @@ export default class RegisterRoute extends Component {
   render() {
     return (
       <div>
-        <h2>Register</h2>
+        <h2 className='register-title'>Register</h2>
         <RegisterForm />
       </div>
     )

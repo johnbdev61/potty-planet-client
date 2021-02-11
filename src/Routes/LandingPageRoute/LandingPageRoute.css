@@ -1,0 +1,9 @@
+.welcome-title {
+  font-family: 'Staatliches', cursive;
+  text-align: center;
+}
+
+.welcome-body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+}

@@ -21,19 +21,19 @@ export default class Header extends Component {
           </span>
         </div>
         <nav>
+          <Link className='nav-links' to='/home'>
+            <b>Home</b>
+          </Link>
           <Link className='nav-links' to='/new-post'>
             <b>New Post</b>
           </Link>
-          <Link className='nav-links' to='/messages'>
-            <b>Messages</b>
-          </Link>
-          <Link className='nav-links' to='archive'>
+          <Link className='nav-links' to='/archive'>
             <b>Success Stories</b>
           </Link>
           <Link
             className='nav-links'
             onClick={this.handleLogoutClick}
-            to='/login'
+            to='/'
           >
             <b>Logout</b>
           </Link>
@@ -48,7 +48,6 @@ export default class Header extends Component {
         <Link className='nav-links' to='/login'>
           <b>Login</b>
         </Link>
-        {' - '}
         <Link className='nav-links' to='/register'>
           <b>Register</b>
         </Link>
@@ -61,7 +60,7 @@ export default class Header extends Component {
     return (
       <header>
         <h1 className='header'>
-          <Link className='title' to='/'>
+          <Link className='title' to='/home'>
             Potty Planet
           </Link>
         </h1>

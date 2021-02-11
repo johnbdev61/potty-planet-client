@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
+import LandingPageRoute from '../../Routes/LandingPageRoute/LandingPageRoute'
 import RegisterRoute from '../../Routes/RegisterRoute/RegisterRoute'
 import LoginRoute from '../../Routes/LoginRoute/LoginRoute'
 import HomeRoute from '../../Routes/HomeRoute/HomeRoute'
@@ -29,7 +30,8 @@ export default class App extends Component {
         <main>
           {hasError && <p>There was an error! Sorry!</p>}
           <Switch>
-            <Route exact path={'/'} component={HomeRoute} />
+            <PublicOnlyRoute  exact path={'/'} component={LandingPageRoute}/>
+            <PrivateRoute path={'/home'} component={HomeRoute} />
             <PrivateRoute path={'/new-post'} component={NewPostRoute} />
             <PrivateRoute path={'/open-post/:postId'} component={OpenPostRoute} />
             <PrivateRoute path={'/archive'} component={ArchiveRoute} />

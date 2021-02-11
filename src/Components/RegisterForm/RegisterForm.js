@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Input, Required, Label } from '../Form/Form'
 import Button from '../Button/Button'
 import AuthApiService from '../../Services/auth-api-service'
+import './RegisterForm.css'
 
 export default class RegisterForm extends Component {
   static defaultProps = {
@@ -37,26 +38,34 @@ export default class RegisterForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div role='alert'>{error && <p>{error}</p>}</div>
-        <div className='center'>
+        <div className='center-register'>
           <div>
-            <Label htmlFor='registration-username-input'>
+            <Label
+              className='register-label'
+              htmlFor='registration-username-input'
+            >
               Username
               <Required />
             </Label>
-            <br/>
-            <Input 
+            <br />
+            <Input
+              className='username-input'
               ref={this.firstInput}
               aria-label='registration-username-input'
               id='registration-name-input'
-              name='username' required
+              name='username'
+              required
             />
           </div>
           <div>
-            <Label htmlFor='registration-password-input'>
+            <Label
+              className='register-label'
+              htmlFor='registration-password-input'
+            >
               Password
               <Required />
             </Label>
-            <br/>
+            <br />
             <Input
               id='registration-password-input'
               aria-label='registration-password-input'
@@ -65,11 +74,14 @@ export default class RegisterForm extends Component {
               required
             />
           </div>
+          <div>
+            <Button className='register-btn' type='submit'>
+              Sign Up
+            </Button>
+            <br />
+            <Link className='to-login' to='/login'>Already have an account?</Link>
+          </div>
         </div>
-        <p>
-          <Button className='btn' type='submit'>Sign Up</Button><br/>
-          <Link to='/login'>Already have an account?</Link>
-        </p>
       </form>
     )
   }

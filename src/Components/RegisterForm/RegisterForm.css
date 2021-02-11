@@ -1,0 +1,16 @@
+.center-register {
+  text-align: center;
+}
+
+.register-label, .to-login {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.username-input {
+  margin-bottom: 8px;
+}
+
+.register-btn {
+  margin-top: 8px;
+}

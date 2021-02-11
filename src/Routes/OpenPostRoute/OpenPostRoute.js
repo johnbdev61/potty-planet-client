@@ -29,7 +29,7 @@ export default class OpenPostRoute extends Component {
       .catch(this.context.setError)  
   }
 
-  handleDeletedPost = (postId) => {
+  handlePostChange = (postId) => {
     const updatedPosts = this.state.posts.filter((post) => {
       return post.id !== postId
     })
@@ -39,8 +39,15 @@ export default class OpenPostRoute extends Component {
   handleDeleteClick = () => {
     console.log('hello world')
     PostApiService.deletePost(this.props.match.params.postId).then(() => {
-      this.handleDeletedPost(Number(this.props.match.params.postId))
-      this.props.history.push('/')
+      this.handlePostChange(Number(this.props.match.params.postId))
+      this.props.history.push('/home')
+    })
+  }
+
+  handleResolveClick = () => {
+    PostApiService.updatePost(this.props.match.params.postId).then(() => {
+      this.handlePostChange(Number(this.props.match.params.postId))
+      this.props.history.push('/archive')
     })
   }
 
@@ -56,18 +63,19 @@ export default class OpenPostRoute extends Component {
     return (
       <section>
         <div className='open-post-card'>
+          <h2 className='post-title'>{post.title}</h2>
           <Context.Consumer>
             {(context) => (
               <>
                 {context.user.id === post.author_id ? (
-                  <section className='delete'>
+                  <section className='delete-resolve'>
                     <button onClick={this.handleDeleteClick}>Delete</button>
+                    <button disabled={post.is_resolved} onClick={this.handleResolveClick}>Mark Resolved</button>
                   </section>
                 ) : null}
               </>
             )}
           </Context.Consumer>
-          <h2 className='post-title'>{post.title}</h2>
           <p className='post-content'>{post.content}</p>
           <p className='post-content'>{post.username}</p>
           <p className='post-content'>

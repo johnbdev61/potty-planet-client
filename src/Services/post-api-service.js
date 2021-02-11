@@ -13,7 +13,7 @@ const PostApiService = {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -33,7 +33,7 @@ const PostApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(object),
     }).then((res) =>
@@ -43,7 +43,7 @@ const PostApiService = {
   getPostComments(postId) {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}/comments`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -54,7 +54,7 @@ const PostApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         post_id: postId,
@@ -69,10 +69,27 @@ const PostApiService = {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
-  }
+  },
+  updatePost(postId) {
+    return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        is_resolved: true,
+      }),
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+    .then(res => res.json())
+    .then(res => {
+      return res
+    })
+    .catch(error => console.error(error))
+  },
 }
 
 export default PostApiService

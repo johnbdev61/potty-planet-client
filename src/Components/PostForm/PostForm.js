@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Input, Textarea, Label } from '../Form/Form'
 import PostsServices from '../../Services/post-api-service'
 import PostContext from '../../Context/PostContext'
@@ -23,7 +24,6 @@ export default class PostForm extends Component {
       title: title.value,
       content: content.value,
     })
-    // .then(this.context.addPost)
     .then(() => {
       title.value = ''
       content.value= ''
@@ -75,6 +75,11 @@ export default class PostForm extends Component {
             <Button type='submit'>
               Submit Post
             </Button>
+          </div>
+          <div>
+            <Link className='cancel' to='/home'>
+            <button>Cancel</button>
+            </Link>
           </div>
         </div>
       </form>

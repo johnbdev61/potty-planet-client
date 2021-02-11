@@ -19,7 +19,7 @@ export default class HomeRoute extends Component {
   renderPosts() {
     const { postList = [] } = this.context
     console.log('POST LIST', this.context.postList)
-    return postList.map(post =>
+    return postList.filter((post) => !post.is_resolved).map(post =>
       <PostListItem
         key={post.id}
         post={post}
@@ -33,7 +33,7 @@ export default class HomeRoute extends Component {
       <div>
         <h2 className='post-title'>Training Posts</h2>
         <section>
-          {error ? <p>There was an error, try again</p> : this.renderPosts()}
+          {error ? <p>There are no posts!</p> : this.renderPosts()}
         </section>
       </div>
     )
