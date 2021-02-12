@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Token from '../../Services/token-service'
-import config from '../../config'
 import PostContext from '../../Context/PostListContext'
 import PostApiService from '../../Services/post-api-service'
 import PostListItem from '../../Components/PostListItem/PostListItem'

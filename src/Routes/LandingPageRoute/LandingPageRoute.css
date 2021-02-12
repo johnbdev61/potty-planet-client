@@ -7,3 +7,11 @@
   font-family: 'Montserrat', sans-serif;
   margin: 10px;
 }
+
+.training {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 40%;
+}

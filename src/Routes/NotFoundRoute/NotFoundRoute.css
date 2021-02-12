@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.toilet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 30%;
+}
+
 .nf-content {
   font-family: 'Montserrat', sans-serif;
   text-align: center;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import image from '../../Images/landing.jpg'
 import './LandingPageRoute.css'
 
 export default class LandingPageRoute extends Component {
@@ -22,6 +23,7 @@ export default class LandingPageRoute extends Component {
           Login above if you have an account. If you are new to Potty Planet,
           welcome! Please click the register link above.
         </p>
+        <img className='training' src={image} alt='training'/>
       </div>
     )
   }

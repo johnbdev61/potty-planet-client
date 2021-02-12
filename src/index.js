@@ -5,6 +5,7 @@ import App from './Components/App/App';
 import { ContextProvider } from './Context/Context'
 import { PostListProvider } from './Context/PostListContext'
 import { PostProvider } from './Context/PostContext'
+import './index.css'
 
 ReactDOM.render(
   <BrowserRouter>

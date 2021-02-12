@@ -40,45 +40,39 @@ export default class PostForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <form
-        className='post-form'
-        onSubmit={this.handlePostSubmit}
-      >
-        <div role='alert'>
-          {error && <p>{error}</p>}
-        </div>
+      <form className='post-form' onSubmit={this.handlePostSubmit}>
+        <div role='alert'>{error && <p>{error}</p>}</div>
         <div className='center-form'>
           <div>
-            <Label htmlFor='post-title'>
-              Title
-            </Label><br/>
+            <Label htmlFor='post-title'>Title</Label>
+            <br />
             <Input
+              className='title-input'
               ref={this.firstInput}
               aria-label='post-title'
               id='post-title'
               name='title'
               required
-              />
+            />
           </div>
           <div>
-            <Label htmlFor='post-content'>
-              Description
-            </Label><br/>
+            <Label htmlFor='post-content'>Description</Label>
+            <br />
             <Textarea
               aria-label='post-content'
               id='post-content'
               name='content'
+              rows='4'
+              cols='50'
               required
             />
           </div>
           <div>
-            <Button type='submit'>
-              Submit Post
-            </Button>
+            <Button type='submit'>Submit Post</Button>
           </div>
           <div>
             <Link className='cancel' to='/home'>
-            <button>Cancel</button>
+              <button>Cancel</button>
             </Link>
           </div>
         </div>

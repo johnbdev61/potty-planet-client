@@ -4,13 +4,12 @@ import './LoginRoute.css'
 
 export default class LoginRoute extends Component {
   static defaultProps = {
-    location: {},
     history: {
       push: () => { },
     },
   }
   handleLoginSuccess = () => {
-    const { location, history } = this.props
+    const { history } = this.props
     console.log('IN HANDLE SUBMIT', this.props)
     history.push('/home')
   }

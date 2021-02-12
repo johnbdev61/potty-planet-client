@@ -23,6 +23,7 @@ export default class OpenPostRoute extends Component {
     PostApiService.getPost(postId)
       .then((post) => {
         this.context.setPost(post)
+        console.log('POST', post)
         return PostApiService.getPostComments(postId)
       })
       .then((comments) => {this.context.setComments(comments)})
