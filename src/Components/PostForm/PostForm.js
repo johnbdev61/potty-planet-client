@@ -29,7 +29,7 @@ export default class PostForm extends Component {
       content.value= ''
       this.props.onPostSuccess({ title, content })
     })
-    .catch(this.context.setError)
+    .catch(this.context.setError())
 
   }
 

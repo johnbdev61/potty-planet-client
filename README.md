@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Map Mash Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://map-mash.netlify.app
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is the Potty Planet Client, which is an application that allows users to create and view posts about their potty training experiences. Every kid is different, sometimes it takes outside experience to help you on your way to getting your child potty trained.
 
-### `npm start`
+Upon registering and logging in, the user will be taken to the homepage where they will see unresolved posts. These are posts parents have created because they need help or suggestions related to their potty training problems. Any user may comment to make their suggestion. The user may also create a post entering a title and optional content detailing their potty training issue. Upon submitting a post, the user will be pushed to the home page where they will see their new post. Once your issue has been resolved and your kid uses the potty, the user may click a button to resolve their post. This will archive the post to the Success Stories route. This let's other parents know how you solved your potty training issue. A user may also delete their post. The resolve and delete buttons are conditionally rendered to show when the post user id matches the id of the user who is logged in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+All posts rendered in the Success Stories route may still take comments. However the resolve button is disabled. If the user tries to navigate to a route or post that does not exist, they will be rerouted to a 404 page.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Potty Planet is a PERN application, cosisting of PostgreSQL, Express, React and Node.js.
 
-### `npm test`
+![picture](./public/screenshots/Homepage.png)
+![picture](./public/screenshots/Mash.png)
+![picture](./public/screenshots/OtherUserMash.png)
+![picture](./public/screenshots/SearchList.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

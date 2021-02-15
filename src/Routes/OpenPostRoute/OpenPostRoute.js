@@ -4,8 +4,6 @@ import Context from '../../Context/Context'
 import PostApiService from '../../Services/post-api-service'
 import CommentForm from '../../Components/CommentForm/CommentForm'
 import CommentItem from '../../Components/CommentItem/CommentItem'
-import ReactMoment from 'react-moment'
-import moment from 'moment'
 import './OpenPostRoute.css'
 
 export default class OpenPostRoute extends Component {
@@ -58,7 +56,6 @@ export default class OpenPostRoute extends Component {
 
   render() {
     const { post, comments = [] } = this.context
-    const dateCreated = moment().format(post.date_created)
     console.log('CONTEXT', this.context)
     console.log('PROPS', this.props)
     return (
@@ -77,12 +74,8 @@ export default class OpenPostRoute extends Component {
               </>
             )}
           </Context.Consumer>
-          <p className='post-content'>{post.content}</p>
           <p className='post-content'>{post.username}</p>
-          <p className='post-content'>
-            Date Created:{' '}
-            <ReactMoment format='MM/DD/YYYY'>{dateCreated}</ReactMoment>
-          </p>
+          <p className='post-content'>{post.content}</p>
         </div>
         <div className='comment-form'>
           <h3 className='comment-title'>Comments</h3>
