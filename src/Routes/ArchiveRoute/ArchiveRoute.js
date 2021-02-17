@@ -16,7 +16,6 @@ export default class ArchiveRoute extends Component {
 
   renderPosts() {
     const { postList = [] } = this.context
-    console.log('POST LIST', this.context.postList)
     return postList.filter((post) => post.is_resolved).map((post) => <PostListItem key={post.id} post={post} />)
   }
 

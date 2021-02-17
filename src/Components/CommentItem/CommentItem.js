@@ -12,3 +12,6 @@ export default function CommentItem(props) {
     </li>
   )
 }
+CommentItem.defaultProps = { comment: {
+  user: {}
+}}

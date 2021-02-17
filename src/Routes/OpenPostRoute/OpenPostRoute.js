@@ -21,7 +21,6 @@ export default class OpenPostRoute extends Component {
     PostApiService.getPost(postId)
       .then((post) => {
         this.context.setPost(post)
-        console.log('POST', post)
         return PostApiService.getPostComments(postId)
       })
       .then((comments) => {this.context.setComments(comments)})
@@ -36,7 +35,6 @@ export default class OpenPostRoute extends Component {
   }
 
   handleDeleteClick = () => {
-    console.log('hello world')
     PostApiService.deletePost(this.props.match.params.postId).then(() => {
       this.handlePostChange(Number(this.props.match.params.postId))
       this.props.history.push('/home')
@@ -56,29 +54,39 @@ export default class OpenPostRoute extends Component {
 
   render() {
     const { post, comments = [] } = this.context
-    console.log('CONTEXT', this.context)
-    console.log('PROPS', this.props)
     return (
       <section>
         <div className='open-post-card'>
           <h2 className='post-title'>{post.title}</h2>
+          <p className='post-author'><b>by </b>{post.username}</p>
           <Context.Consumer>
             {(context) => (
               <>
                 {context.user.id === post.author_id ? (
                   <section className='delete-resolve'>
-                    <button onClick={this.handleDeleteClick}>Delete</button>
-                    <button disabled={post.is_resolved} onClick={this.handleResolveClick}>Mark Resolved</button>
+                    <button
+                      className='post-btn'
+                      onClick={this.handleDeleteClick}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className='post-btn'
+                      disabled={post.is_resolved}
+                      onClick={this.handleResolveClick}
+                    >
+                      Mark Resolved
+                    </button>
                   </section>
                 ) : null}
               </>
             )}
           </Context.Consumer>
-          <p className='post-content'>{post.username}</p>
+          <hr/>
           <p className='post-content'>{post.content}</p>
         </div>
         <div className='comment-form'>
-          <h3 className='comment-title'>Comments</h3>
+          <h2 className='comment-title'>Comments</h2>
           <CommentForm />
         </div>
         <hr />

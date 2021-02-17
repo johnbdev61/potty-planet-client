@@ -18,7 +18,6 @@ export default class PostForm extends Component {
   handlePostSubmit = event => {
     event.preventDefault()
     const { title, content } = event.target
-    console.log(event.target)
     this.setState({ error: null })
     PostsServices.addPost({
       title: title.value,

@@ -10,7 +10,6 @@ import HomeRoute from '../../Routes/HomeRoute/HomeRoute'
 import NewPostRoute from '../../Routes/NewPostRoute/NewPostRoute'
 import OpenPostRoute from '../../Routes/OpenPostRoute/OpenPostRoute'
 import ArchiveRoute from '../../Routes/ArchiveRoute/ArchiveRoute'
-import MessagesRoute from '../../Routes/MessagesRoute/MessagesRoute'
 import NotFoundRoute from '../../Routes/NotFoundRoute/NotFoundRoute'
 
 export default class App extends Component {
@@ -35,7 +34,6 @@ export default class App extends Component {
             <PrivateRoute path={'/new-post'} component={NewPostRoute} />
             <PrivateRoute path={'/open-post/:postId'} component={OpenPostRoute} />
             <PrivateRoute path={'/archive'} component={ArchiveRoute} />
-            <PrivateRoute path={'/messages'} component={MessagesRoute} />
             <PublicOnlyRoute path={'/register'} component={RegisterRoute} />
             <PublicOnlyRoute path={'/login'} component={LoginRoute} />
             <Route component={NotFoundRoute} />

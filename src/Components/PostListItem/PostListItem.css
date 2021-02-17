@@ -3,6 +3,8 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background-color: white;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .post-card:hover {
@@ -11,6 +13,7 @@
 
 .post-link {
   font-family: 'Staatliches', cursive;
+  color: indigo;
   text-decoration: none;
 }
 

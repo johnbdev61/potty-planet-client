@@ -44,7 +44,7 @@ export default class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
+      <nav className='login-register'>
         <Link className='nav-links' to='/login'>
           <b>Login</b>
         </Link>
@@ -56,7 +56,6 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log('USER', this.context.user)
     return (
       <header>
         <h1 className='header'>

@@ -65,7 +65,6 @@ const PostApiService = {
     )
   },
   deletePost(postId) {
-    console.log('post method')
     return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       method: 'DELETE',
       headers: {

@@ -15,6 +15,7 @@
 .nav-links {
   font-family: 'Montserat', sans-serif;
   text-decoration: none;
+  color: black;
   padding-right: 15px;
 }
 
@@ -25,4 +26,8 @@
 
 nav {
   text-align: center;
+}
+
+.login-register {
+  margin-top: 20px;
 }

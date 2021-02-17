@@ -16,7 +16,6 @@ export default class LoginForm extends Component {
   handleSubmit = event => {
     event.preventDefault()
     const { username, password } = event.target
-    console.log(event.target)
     this.setState({ error: null })
     AuthApiService.postLogin({
       username: username.value,
@@ -25,7 +24,6 @@ export default class LoginForm extends Component {
     .then(res => {
       username.value = ''
       password.value = ''
-      console.log('AUTH')
         this.context.processLogin(res.authToken)
         this.props.onLoginSuccess({ username, password })
     })

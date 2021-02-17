@@ -10,7 +10,6 @@ export default class LoginRoute extends Component {
   }
   handleLoginSuccess = () => {
     const { history } = this.props
-    console.log('IN HANDLE SUBMIT', this.props)
     history.push('/home')
   }
 
