@@ -8,7 +8,7 @@ export default class RegisterRoute extends Component {
       push: () => {},
     },
   }
-  handleRegistrationSuccess = () => {
+  onRegistrationSuccess = () => {
     const { history } = this.props
     history.push('/login')
   }
@@ -17,7 +17,7 @@ export default class RegisterRoute extends Component {
     return (
       <div>
         <h2 className='register-title'>Register</h2>
-        <RegisterForm />
+        <RegisterForm onRegistrationSuccess={this.onRegistrationSuccess} />
       </div>
     )
   }

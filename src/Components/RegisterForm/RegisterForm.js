@@ -35,9 +35,10 @@ export default class RegisterForm extends Component {
 
   render() {
     const { error } = this.state
+    console.log(error)
     return (
       <form onSubmit={this.handleSubmit}>
-        <div role='alert'>{error && <p>{error}</p>}</div>
+        <div role='alert'>{error && <p>Something went wrong!</p>}</div>
         <div className='center-register'>
           <div>
             <Label
