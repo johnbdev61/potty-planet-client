@@ -1,6 +1,7 @@
 # Map Mash Client
 
-https://map-mash.netlify.app
+https://potty-planet-client.vercel.app
+
 
 ## Description
 
